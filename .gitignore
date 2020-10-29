@@ -1,0 +1,6 @@
+.env
+.vscode
+.virtual_chapel
+*.sqlite3
+*pyc
+__pycache__
