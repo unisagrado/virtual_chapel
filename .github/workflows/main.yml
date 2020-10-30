@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/virtual_chapel:latest
+          tags: unisagrado/virtual_chapel:latest
