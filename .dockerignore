@@ -1,0 +1,5 @@
+.virtual_chapel
+.vscode
+.env
+*.sqlite3
+requirements-dev.txt
