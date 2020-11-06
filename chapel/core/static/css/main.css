@@ -1,6 +1,252 @@
+:root {
+    --color-background: #790200;
+    --color-primary: #bc0500;
+    --color-primary-dark: #790200;
+    --color-header: #201c1c;
+    --color-grey: #acacac;
+    --color-grey-dark: #919191;
+    --color-grey-light: 204,204,204;
+    --color-secondary: #ea9500;
+
+    font-size: 60%;
+}
+
+
+@font-face {
+    font-family: 'Photograph Signature';
+    src:url('../fonts/Photograph-Signature.ttf.woff') format('woff'),
+        url('../fonts/Photograph-Signature.ttf.svg#Photograph-Signature') format('svg'),
+        url('../fonts/Photograph-Signature.ttf.eot'),
+        url('../fonts/Photograph-Signature.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Black';
+    src:url('../fonts/gotham-black-webfont.woff') format('woff'),
+        url('../fonts/gotham-black-webfont.svg#gothamblack') format('svg'),
+        url('../fonts/gotham-black-webfont.eot'),
+        url("../fonts/gotham-black-webfont.woff2") format("woff2"),
+        url("../fonts/gotham-black-webfont.ttf") format("truetype"),
+        url('../fonts/gotham-black-webfont.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: 0;
+    font-family: 'Montserrat', sans-serif;
 }
+
+.background {
+    background-color: var(--color-background);
+    background-repeat: no-repeat;
+    background-image: url('../img/background-mobile.png');
+    background-size: cover;
+    min-height: 100vh;
+}
+
+
+header {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    background-color: var(--color-header);
+    padding: 2.4rem 0;
+}
+
+header img {
+    max-width: 20rem;
+}
+
+
+.nav-menu {
+    display: flex;
+    flex: 1;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.nav-menu ul li + li {
+    margin-top: 0.2rem;
+}
+
+.nav-button {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: #FFF;
+    background-color: var(--color-grey);
+    padding: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;  
+    font-size: 1.5rem;  
+}
+
+.nav-button:hover{
+    background-color: var(--color-grey-dark);
+    transition: background-color 0.2s;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.banner img {
+    max-width: 22rem;
+}
+
+.welcome-message {
+    text-align: center;
+}
+
+.welcome-message p{
+    color: #fff;
+    padding: 0 0.4rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.welcome-message em {
+    color: #fff;
+    font-weight: 300;
+    font-size: 1rem;    
+}
+
+.round-button {
+    display: flex;
+    padding: 0.4rem 1.4rem;
+    background-color: var(--color-primary);
+    border-radius: 16px;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.welcome-container .round-button {
+    margin: 30px auto 40px;
+}
+
+
+.candle-container {
+    display: flex;
+    background-image: url('../img/candle-background.png');
+    background-repeat: repeat-x;
+    background-size: cover;
+    height: 425px;
+    align-items: center;
+    justify-content: center;
+    padding: 6.8rem 6.8rem 8.8rem;
+}
+
+.candle-container form {
+    padding: 1.2rem;
+    background: rgba(var(--color-grey-light),0.4);
+    width: 100%;
+    height: 100%;
+}
+
+.candle-container form .round-button{
+    font-size: 1.4rem;
+    padding: 0.6rem 1.6rem;
+    font-weight: 500;
+    margin: 1.6rem auto;
+}
+
+.form-row {
+    width: 100%; 
+}
+
+.form-row + .form-row {
+    margin-top: 1rem;
+}
+
+.label-block label{
+    display:block;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.input-text input, 
+.input-text textarea{
+    width: 100%;
+    padding: 0.1rem 0.1rem;
+}
+
+.input-text textarea{
+    resize: none;
+}
+
+
+.show {
+    display: initial;
+    visibility: visible;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+footer {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem;
+}
+
+.candle {
+    position: relative;
+}
+
+.candle-light {
+    background-image: url('../img/candle-light.png');
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    border: 1px solid #fff;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (min-width: 600px) {
+    .background {
+        width: 100%;
+        background-color: var(--color-background);
+        background-repeat: no-repeat;
+        background-image: url('../img/background.png');
+        background-size: cover;
+        min-height: 100vh;
+    }
+}
+
