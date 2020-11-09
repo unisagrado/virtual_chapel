@@ -4,7 +4,7 @@
     --color-primary-dark: #790200;
     --color-header: #201c1c;
     --color-grey: #acacac;
-    --color-grey-dark: #919191;
+    --color-grey-dark: #555555;
     --color-grey-light: 204,204,204;
     --color-secondary: #ea9500;
     --color-secondary-light: #cba52c;
@@ -68,6 +68,7 @@ header img {
 .nav-menu {
     display: flex;
     flex: 1;
+    background: var(--color-grey-dark);
 }
 
 .nav-menu ul {
@@ -90,6 +91,7 @@ header img {
     flex: 1;
     color: #FFF;
     background-color: var(--color-grey);
+    border: 1px solid var(--color-grey);
     padding: 1.6rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;  
@@ -127,7 +129,9 @@ header img {
 .welcome-message em {
     color: #fff;
     font-weight: 300;
-    font-size: 1rem;    
+    font-size: 1rem; 
+    display:block;
+    margin-top: 8px;   
 }
 
 .round-button {
@@ -153,7 +157,7 @@ header img {
     background-image: url('../img/candle-background.png');
     background-repeat: repeat-x;
     background-size: cover;
-    height: 500px;
+    height: 450px;
     align-items: center;
     justify-content: center;
     margin-top: 80px;
@@ -163,7 +167,7 @@ header img {
     padding: 1.2rem;
     background: rgba(var(--color-grey-light),0.4);
     width: 100%;
-    height: 100%;
+    max-width: 320px
 }
 
 .candle-container form .round-button{
@@ -184,14 +188,20 @@ header img {
 .label-block label{
     display:block;
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 0.2rem;
 }
 
 .input-text input, 
 .input-text textarea{
     width: 100%;
-    padding: 0.1rem 0.1rem;
+    padding: 1.2rem;
+    border-radius: 4px;
+    border: 1px solid #fff;
+}
+
+.input-text input {
+    height: 32px;
 }
 
 .input-text textarea{
@@ -222,8 +232,6 @@ footer {
     height: 24px;
 }
 
-
-
 .success-container {
     width: 100%;    
     height: 100%;
@@ -241,9 +249,12 @@ footer {
     width: 100%;
     padding: 20px 34px;
     font-weight: 600;
+    font-size: 1rem;
 }
 
 .success-message > img {
+    display: block;
+    margin: auto;
     margin-top: -16px;
     max-width: calc(100vw - 64px);
 }
@@ -290,10 +301,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
     .background {
         width: 100%;
         background-color: var(--color-background);
@@ -302,5 +314,53 @@ footer {
         background-size: cover;
         min-height: 100vh;
     }
+
+    .round-button {
+        padding: 0.8rem 1.8rem;
+        font-size: 1.4rem;
+    }
+
+    .welcome-message p{
+        font-size: 1.4rem;
+    }
+    
+    .welcome-message em {
+        font-size: 1.2rem; 
+    }
+
+    .success-message > p{
+        font-size: 1.4rem;
+    }
+    
+    .success-message > img {
+        margin-top: -16px;
+        max-width: calc(100vw - 64px);
+    }
+
+    .lit-candle-message {
+        width: 72px;
+        height: 72px;
+    }
+
+    .lit-candle-message p {
+        font-size: 0.8rem;
+    }
+
+    .nav-menu ul{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .nav-menu ul li{
+        width: 248px;
+    }
+
+
+    .nav-menu ul li + li {
+        margin-top: 0;
+        margin-left: 0.2rem;
+    }
+
+
 }
 
