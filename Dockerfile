@@ -21,6 +21,8 @@ RUN pip install -r requirements.txt
 COPY ./chapel ./chapel
 COPY ./.docker/entrypoint.sh /bin/entrypoint.sh
 
+RUN python manage.py test
+
 EXPOSE $PORT
 
 ENTRYPOINT ["/bin/entrypoint.sh"]

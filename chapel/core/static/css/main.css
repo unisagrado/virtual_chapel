@@ -115,6 +115,10 @@ header img {
     max-width: 22rem;
 }
 
+.welcome-container {
+    position: relative;
+}
+
 .welcome-message {
     text-align: center;
 }
@@ -161,6 +165,7 @@ header img {
     align-items: center;
     justify-content: center;
     margin-top: 80px;
+    position: relative;
 }
 
 .candle-container form {
@@ -239,7 +244,21 @@ footer {
 
 .success-message {
     width: 100%;
+    padding: 24px;
+}
+
+.balloon {
+    border-radius: 16px;
+    background: #fff;
+    color: #000;
     padding: 24px 32px;
+    position: relative;
+    width: 100%;
+}
+
+.ballon > p {
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .success-message > p{
@@ -255,8 +274,10 @@ footer {
 .success-message > img {
     display: block;
     margin: auto;
-    margin-top: -16px;
-    max-width: calc(100vw - 64px);
+    margin-top: 16px;
+    width: 100%;
+    max-width: 645px;
+    min-width: 300px;
 }
 
 .lit-candle-message {
@@ -268,8 +289,9 @@ footer {
     width: 64px;
     height: 64px;
     padding: 10px;
-    margin: auto;
-    margin-top: -16px;
+    position: absolute;
+    left: calc(50% - 32px);
+    top: 50px;
 }
 
 .lit-candle-message p {
@@ -304,6 +326,13 @@ footer {
     cursor: pointer;
 }
 
+.show-lg{
+    display: none;
+    position:relative;
+    height: 100%;
+}
+
+
 
 @media (min-width: 700px) {
     .background {
@@ -320,26 +349,59 @@ footer {
         font-size: 1.4rem;
     }
 
+
+    .welcome-container #initial-message {
+        margin: auto;
+        max-width: 640px;
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+
+    #initial-message .round-button{
+        margin-top: 5rem;
+    }
+
     .welcome-message p{
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
     
     .welcome-message em {
-        font-size: 1.2rem; 
+        font-size: 1.4rem; 
     }
 
-    .success-message > p{
-        font-size: 1.4rem;
+    .success-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
-    
-    .success-message > img {
-        margin-top: -16px;
-        max-width: calc(100vw - 64px);
+
+    .success-message {
+        padding-top: 5rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .success-message > img{
+        margin-top: 20px;
+    }
+
+    .balloon {
+        max-width: 372px;
+    }
+
+    .balloon > p{
+        font-size: 1.4rem;
     }
 
     .lit-candle-message {
         width: 72px;
         height: 72px;
+        left: 95%;
+        top: 0;
+        position: absolute;
     }
 
     .lit-candle-message p {
@@ -361,6 +423,61 @@ footer {
         margin-left: 0.2rem;
     }
 
+    .candle-container{
+        margin-bottom: 50px;
+    }
 
+    .candle {
+        margin-top: 4rem;
+        margin-right: 4rem;     
+    }
+
+    .show-lg{
+        display: flex;  
+        align-items: flex-end;
+    }
+
+    #clelia_merloni-pic {
+        align-items: flex-end;
+    }
+
+    #clelia_merloni-pic img {
+        display: block;
+        max-width: 340px;
+        width: auto;
+        height: auto;
+        bottom: 0;
+    }
+
+    #christ-pic {
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+    }
+
+    #christ-pic img {
+        height: 100%;
+        max-height: 360px;
+    }
 }
 
+@media (min-width:700px) and (max-width: 1080px){
+    #christ-pic img {
+        height: 100%;
+        max-height: 300px;
+    }
+}
+
+@media (min-width:700px) and (max-width: 930px){
+    #christ-pic img {
+        height: 100%;
+        max-height: 260px;
+    }
+}
+
+@media (min-width:700px) and (max-width: 850px){
+    #christ-pic img {
+        height: 100%;
+        max-height: 240px;
+    }
+}

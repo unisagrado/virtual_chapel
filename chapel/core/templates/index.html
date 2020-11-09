@@ -24,27 +24,36 @@
 
   <main>
     <section class="welcome-container">
-      <div class="banner">
-        <img src="{% static 'img/banner.svg' %}" />
-      </div>
+      <div id="initial-message">
+        <div class="banner">
+          <img src="{% static 'img/banner.svg' %}" />
+        </div>
 
-      <div class="welcome-message">
-        <p>Olá!</p>
-        <p>
-          Seja bem-vindo(a) a este local, onde você poderá deixar seus pedidos, 
-          em intercessão a bem Aventurada Clélia Merloni.
-        </p>
-        <p>“Abraço-te no Sagrado Coração de Jesus e nEle te fecho, com a chave da oração.”</p>
-        <em>Bem-Aventurada Clélia Merloni</em>
-      </div>
+        <div class="welcome-message">
+          <p>Olá!</p>
+          <p>
+            Seja bem-vindo(a) a este local, onde você poderá deixar seus pedidos, 
+            em intercessão a bem Aventurada Clélia Merloni.
+          </p>
+          <p>“Abraço-te no Sagrado Coração de Jesus e nEle te fecho, com a chave da oração.”</p>
+          <em>Bem-Aventurada Clélia Merloni</em>
+        </div>
 
-      <button class="round-button" role="button" title="Faça sua prece">
-        Faça sua prece
-      </button>
+        <button class="round-button" role="button" title="Faça sua prece">
+          Faça sua prece
+        </button>
+      </div>
+      
+      <div class="show-lg" id="christ-pic">
+        <img id="christ-pic" src="{% static 'img/christ.png' %}" alt="Imagem de cristo de braços abertos" />
+      </div>
     </section>
 
 
     <section class="candle-container">
+      <div class="show-lg" id="clelia_merloni-pic">
+        <img src="{% static 'img/clelia_merloni.png' %}" alt="Bem-aventurada Clélia Merloni" />
+      </div>
       
       <form class="hide" action="." novalidate method="post">
         <div class="form-row input-text label-block">
@@ -65,11 +74,13 @@
         </button>
       </form>
 
-      <div class="success-container">
+      <div class="show success-container">
         <div class="success-message"> 
-          <p>Sua intenção foi registrada com sucesso. Acenda sua vela</p>
-          <div class="hide lit-candle-message">
-            <p>sua vela ficará acesa por 7 dias</p>
+          <div class="balloon">
+            <p>A Bem-Aventurada Clélia Merloni interceda por você e por suas intenções.</p>
+            <div class="show lit-candle-message">
+              <p>sua vela ficará acesa por 7 dias</p>
+            </div>
           </div>
           <img src="{% static 'img/msg_clelia_merloni.png' %}" alt="Abençoo-vos com cem corações. Bem-aventurada Clélia Merloni" />
         </div>
