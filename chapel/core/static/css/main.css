@@ -43,6 +43,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
 .background {
     background-color: var(--color-background);
     background-repeat: no-repeat;
@@ -166,13 +167,15 @@ header img {
     justify-content: center;
     margin-top: 80px;
     position: relative;
+    width: 100%;
 }
 
 .candle-container form {
     padding: 1.2rem;
     background: rgba(var(--color-grey-light),0.4);
     width: 100%;
-    max-width: 320px
+    margin: auto;
+    max-width: 320px;
 }
 
 .candle-container form .round-button{
@@ -211,17 +214,6 @@ header img {
 
 .input-text textarea{
     resize: none;
-}
-
-
-.show {
-    display: initial;
-    visibility: visible;
-}
-
-.hide {
-    display: none;
-    visibility: hidden;
 }
 
 footer {
@@ -374,6 +366,7 @@ footer {
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        margin-left: 30px;
     }
 
     .success-message {
@@ -382,6 +375,7 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-left: 80px;
     }
 
     .success-message > img{
@@ -427,6 +421,10 @@ footer {
         margin-bottom: 50px;
     }
 
+    .candle-container form{
+        margin: auto
+    }
+
     .candle {
         margin-top: 4rem;
         margin-right: 4rem;     
@@ -439,6 +437,8 @@ footer {
 
     #clelia_merloni-pic {
         align-items: flex-end;
+        position: absolute;
+        left: 0;
     }
 
     #clelia_merloni-pic img {
@@ -462,22 +462,27 @@ footer {
 }
 
 @media (min-width:700px) and (max-width: 1080px){
-    #christ-pic img {
+    #christ-pic img, #clelia_merloni-pic img  {
         height: 100%;
         max-height: 300px;
     }
 }
 
 @media (min-width:700px) and (max-width: 930px){
-    #christ-pic img {
+    #christ-pic img, #clelia_merloni-pic img {
         height: 100%;
         max-height: 260px;
     }
 }
 
 @media (min-width:700px) and (max-width: 850px){
-    #christ-pic img {
+    #christ-pic img, #clelia_merloni-pic img {
         height: 100%;
         max-height: 240px;
     }
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
 }

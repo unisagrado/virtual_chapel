@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Capela Virtual</title>
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700;800&family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}"></link>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700;800&family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"></link>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 </head>
 <body class="background">
   <div class="header">
@@ -22,7 +23,7 @@
   </div>
   
 
-  <main>
+  <main id="virtual-candle">
     <section class="welcome-container">
       <div id="initial-message">
         <div class="banner">
@@ -39,7 +40,7 @@
           <em>Bem-Aventurada Clélia Merloni</em>
         </div>
 
-        <button class="round-button" role="button" title="Faça sua prece">
+        <button class="round-button" role="button" title="Faça sua prece" @click="hello()">
           Faça sua prece
         </button>
       </div>
@@ -55,7 +56,7 @@
         <img src="{% static 'img/clelia_merloni.png' %}" alt="Bem-aventurada Clélia Merloni" />
       </div>
       
-      <form class="hide" action="." novalidate method="post">
+      <form :class="!success? 'show':'hide'" action="." novalidate method="post" @submit="showCandle">
         <div class="form-row input-text label-block">
           <label for="id_name">Nome:</label>
           <input type="text" id="id_name" name="name" />
@@ -74,20 +75,20 @@
         </button>
       </form>
 
-      <div class="show success-container">
+      <div :class="success? 'show': 'hide'" class="success-container">
         <div class="success-message"> 
           <div class="balloon">
             <p>A Bem-Aventurada Clélia Merloni interceda por você e por suas intenções.</p>
-            <div class="show lit-candle-message">
+            <div :class="litCandle? 'show': 'hide'" class="lit-candle-message">
               <p>sua vela ficará acesa por 7 dias</p>
             </div>
           </div>
           <img src="{% static 'img/msg_clelia_merloni.png' %}" alt="Abençoo-vos com cem corações. Bem-aventurada Clélia Merloni" />
         </div>
 
-        <div class="candle">
-          <button class="show candle-light" type="button">
-            <img class="hide" id="id_candle-light" src="{% static 'img/candle-light.png'%}" alt="Chama" />
+        <div class="candle" id="candle">
+          <button class="candle-light" type="button" @click="lightCandle">
+            <img :class="litCandle? 'show': 'hide'" id="id_candle-light" src="{% static 'img/candle-light.png'%}" alt="Chama" />
           </button>
           <img src="{% static 'img/candle.png' %}" />
         </div>
@@ -96,5 +97,7 @@
   </main>
   
   {% include 'footer.html' %}
+  
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
