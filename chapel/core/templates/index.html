@@ -65,17 +65,24 @@
         </button>
       </form>
 
-      <div class="show candle">
-        <button class="show candle-light" type="button">
-          <img class="hide" id="id_candle-light" src="{% static 'img/candle-light.png'%}" alt="Fogo" />
-        </button>
-        <img src="{% static 'img/candle.png' %}" />
-      </div>
+      <div class="success-container">
+        <div class="success-message"> 
+          <p>Sua intenção foi registrada com sucesso. Acenda sua vela</p>
+          <div class="hide lit-candle-message">
+            <p>sua vela ficará acesa por 7 dias</p>
+          </div>
+          <img src="{% static 'img/msg_clelia_merloni.png' %}" alt="Abençoo-vos com cem corações. Bem-aventurada Clélia Merloni" />
+        </div>
 
+        <div class="candle">
+          <button class="show candle-light" type="button">
+            <img class="hide" id="id_candle-light" src="{% static 'img/candle-light.png'%}" alt="Chama" />
+          </button>
+          <img src="{% static 'img/candle.png' %}" />
+        </div>
+      </div>
     </section>
   </main>
-
-
   
   {% include 'footer.html' %}
 </body>

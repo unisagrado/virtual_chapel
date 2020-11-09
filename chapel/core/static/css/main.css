@@ -7,6 +7,7 @@
     --color-grey-dark: #919191;
     --color-grey-light: 204,204,204;
     --color-secondary: #ea9500;
+    --color-secondary-light: #cba52c;
 
     font-size: 60%;
 }
@@ -152,10 +153,10 @@ header img {
     background-image: url('../img/candle-background.png');
     background-repeat: repeat-x;
     background-size: cover;
-    height: 425px;
+    height: 500px;
     align-items: center;
     justify-content: center;
-    padding: 6.8rem 6.8rem 8.8rem;
+    margin-top: 80px;
 }
 
 .candle-container form {
@@ -216,9 +217,62 @@ footer {
     width: 100%;
     text-align: center;
     padding: 0.6rem;
+    position: fixed;
+    bottom: 0;
+    height: 24px;
+}
+
+
+
+.success-container {
+    width: 100%;    
+    height: 100%;
+}
+
+.success-message {
+    width: 100%;
+    padding: 24px 32px;
+}
+
+.success-message > p{
+    border-radius: 16px;
+    background: #fff;
+    color: #000;
+    width: 100%;
+    padding: 20px 34px;
+    font-weight: 600;
+}
+
+.success-message > img {
+    margin-top: -16px;
+    max-width: calc(100vw - 64px);
+}
+
+.lit-candle-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-secondary-light);
+    border-radius: 100%;
+    width: 64px;
+    height: 64px;
+    padding: 10px;
+    margin: auto;
+    margin-top: -16px;
+}
+
+.lit-candle-message p {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.6rem;
 }
 
 .candle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -229,7 +283,7 @@ footer {
     border-radius: 50%;
     position: absolute;
     top: 0;
-    left: 50px;
+    left: calc(50% - 45px);
     border: 1px solid #fff;
     width: 70px;
     height: 70px;
