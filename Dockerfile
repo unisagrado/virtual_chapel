@@ -1,8 +1,10 @@
 FROM python:3.9-slim-buster
 
+ARG A_SECRET_KEY=super-secret-key-of-the-app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV PORT 8000
+ENV SECRET_KEY=${secret_key}
 
 # install mysqlclient
 RUN apt-get update \ 
