@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Faça sua prece{% endblock title %}
+
+{% block content %}
+ <form :class="!success? 'show':'hide'" action="." novalidate method="post" @submit="submitPrayerForm">
+    {% csrf_token %}
+    <div class="form-row input-text label-block">
+        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+        {{ form.name.errors }}
+        {{ form.name }}
+    </div>
+    <div class="form-row input-text label-block">
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+        {{ form.email.errors }}
+        {{ form.email }}
+    </div>
+    <div class="form-row input-text label-block">
+        <label for="{{ form.prayer.id_for_label }}">{{ form.prayer.label }}</label>
+        {{ form.prayer.errors }}
+        {{ form.prayer }}
+    </div>  
+
+    <button class="round-button" role="button" type="submit">
+        Enviar Prece
+    </button>
+</form>
+{% endblock content %}

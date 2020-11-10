@@ -1,7 +1,7 @@
 from django import forms
 
 
-class PrayersForm(forms.Form):
+class PrayerForm(forms.Form):
     name = forms.CharField(label='Nome')
     email = forms.EmailField(label='Email')
     prayer = forms.CharField(label='Deixe sua prece',

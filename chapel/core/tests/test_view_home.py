@@ -1,7 +1,9 @@
 from django.test import TestCase
+from chapel.prayers.models import Prayer
+from chapel.prayers.forms import PrayerForm
 
 
-class HomeTest(TestCase):
+class HomeGet(TestCase):
     def setUp(self):
         self.resp = self.client.get('')
 
@@ -19,11 +21,6 @@ class HomeTest(TestCase):
             ('title="Faça sua prece"', 1),
             ('<li><a class="nav-button" href="#sobre">Sobre</a></li>', 1),
             ('<li><a class="nav-button" href="#prece">Faça sua Prece</a></li>', 1),
-            ('<form', 1),
-            ('<label', 3),
-            ('<input', 3),
-            ('<textarea', 1),
-            ('<button', 3),
         )
 
         for expected, count in contents:

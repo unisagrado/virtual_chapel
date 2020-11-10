@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capela Virtual</title>
+  <title>{% block title %}Capela Virtual{% endblock title %}</title>
   <link rel="stylesheet" href="{% static 'css/main.css' %}"></link>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700;800&family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"></link>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
@@ -55,53 +55,14 @@
       <div class="show-lg" id="clelia_merloni-pic">
         <img src="{% static 'img/clelia_merloni.png' %}" alt="Bem-aventurada Clélia Merloni" />
       </div>
-      
-      <form :class="!success? 'show':'hide'" action="." novalidate method="post" @submit="submitPrayerForm">
-        {% csrf_token %}
-        <div class="form-row input-text label-block">
-          <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-          {{ form.name.errors }}
-          {{ form.name }}
-        </div>
-        <div class="form-row input-text label-block">
-          <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
-          {{ form.email.errors }}
-          {{ form.email }}
-        </div>
-        <div class="form-row input-text label-block">
-          <label for="{{ form.prayer.id_for_label }}">{{ form.prayer.label }}</label>
-          {{ form.prayer.errors }}
-          {{ form.prayer }}
-        </div>  
 
-        <button class="round-button" role="button" type="submit">
-          Enviar Prece
-        </button>
-      </form>
-
-      <div :class="success? 'show': 'hide'" class="success-container">
-        <div class="success-message"> 
-          <div class="balloon">
-            <p>A Bem-Aventurada Clélia Merloni interceda por você e por suas intenções.</p>
-            <div :class="litCandle? 'show': 'hide'" class="lit-candle-message">
-              <p>sua vela ficará acesa por 7 dias</p>
-            </div>
-          </div>
-          <img src="{% static 'img/msg_clelia_merloni.png' %}" alt="Abençoo-vos com cem corações. Bem-aventurada Clélia Merloni" />
-        </div>
-
-        <div class="candle" id="candle">
-          <button class="candle-light" type="button" @click="lightCandle">
-            <img :class="litCandle? 'show': 'hide'" id="id_candle-light" src="{% static 'img/candle-light.png'%}" alt="Chama" />
-          </button>
-          <img src="{% static 'img/candle.png' %}" />
-        </div>
-      </div>
+      {% block content %}
+      {% endblock content%}      
     </section>
   </main>
   
   <footer>
-    &copy; 2020 | UNISAGRADO. Todos os direitos reservados.
+      &copy; 2020 | UNISAGRADO. Todos os direitos reservados.
   </footer>
   
   <script src="{% static 'js/main.js' %}"></script>

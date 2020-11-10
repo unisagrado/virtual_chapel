@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Intenção enviada{% endblock title %}
+
+{% block content %}
+<div class="success-container">
+    <div class="success-message"> 
+        <div class="balloon">
+        <p>A Bem-Aventurada Clélia Merloni interceda por você e por suas intenções.</p>
+        <div :class="litCandle? 'show': 'hide'" class="lit-candle-message">
+            <p>sua vela ficará acesa por 7 dias</p>
+        </div>
+        </div>
+        <img src="{% static 'img/msg_clelia_merloni.png' %}" alt="Abençoo-vos com cem corações. Bem-aventurada Clélia Merloni" />
+    </div>
+
+    <div class="candle" id="candle">
+        <button class="candle-light" type="button" @click="lightCandle">
+            <img :class="litCandle? 'show': 'hide'" id="id_candle-light" src="{% static 'img/candle-light.png'%}" alt="Chama" />
+        </button>
+        <img src="{% static 'img/candle.png' %}" />
+    </div>
+</div>
+{% endblock content %}

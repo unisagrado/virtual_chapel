@@ -27,8 +27,10 @@ const virtualCandle = new Vue({
         hello() {
             location.reload();
         },
-        showCandle(event) {
+        submitPrayerForm(event) {
             event.preventDefault();
+            form = event.target;
+            form.submit();
             this.success = true;
             this.litCandle = false;
         },
