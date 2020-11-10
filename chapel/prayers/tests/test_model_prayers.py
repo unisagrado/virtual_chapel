@@ -7,7 +7,7 @@ class PrayersModelTest(TestCase):
     def setUp(self):
         self.obj = Prayer.objects.create(
             name='Vinicius Boscoa',
-            email='vinicius.boscoa@unisagrado.edu.br',
+            email='valid@email.com',
             prayer='Pelas famílias'
         )
 
@@ -17,3 +17,6 @@ class PrayersModelTest(TestCase):
     def test_created_at(self):
         """Prayer must have an auto created_at attr"""
         self.assertIsInstance(self.obj.created_at, datetime)
+
+    def test_str(self):
+        self.assertEqual('Vinicius Boscoa', str(self.obj))

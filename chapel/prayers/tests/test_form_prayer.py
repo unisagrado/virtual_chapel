@@ -8,3 +8,16 @@ class PrayerFormTest(TestCase):
         form = PrayerForm()
         expected = ['name', 'email', 'prayer']
         self.assertSequenceEqual(expected, list(form.fields))
+
+    def test_name_must_be_capitalized(self):
+        """Name must be capitalized"""
+        form = self.make_validated_form(name='VINICIUS boscoa')
+        self.assertEqual('Vinicius Boscoa', form.cleaned_data['name'])
+
+    def make_validated_form(self, **kwargs):
+        valid = dict(name='Vinicius Boscoa', email='valid@email.com',
+                     prayer='Pelas famílias')
+        data = dict(valid, **kwargs)
+        form = PrayerForm(data)
+        form.is_valid()
+        return form

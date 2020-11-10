@@ -43,7 +43,7 @@ class PrayersNewGet(TestCase):
 
 class PrayersNewPostValid(TestCase):
     def setUp(self):
-        data = dict(name='Vinicius Boscoa', email='vinicius.boscoa@unisagrado.edu.br',
+        data = dict(name='Vinicius Boscoa', email='valid@email.com',
                     prayer='Pelas famílias')
         self.resp = self.client.post(r('prayers:new'), data)
 
