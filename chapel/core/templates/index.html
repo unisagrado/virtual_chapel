@@ -57,17 +57,21 @@
       </div>
       
       <form :class="!success? 'show':'hide'" action="." novalidate method="post" @submit="showCandle">
+        {% csrf_token %}
         <div class="form-row input-text label-block">
-          <label for="id_name">Nome:</label>
-          <input type="text" id="id_name" name="name" />
+          <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+          {{ form.name.errors }}
+          {{ form.name }}
         </div>
         <div class="form-row input-text label-block">
-          <label for="id_email">E-mail</label>
-          <input type="text" id="id_email" name="email" />
+          <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+          {{ form.email.errors }}
+          {{ form.email }}
         </div>
         <div class="form-row input-text label-block">
-          <label for="id_prayer">Deixe sua prece:</label>
-          <textarea rows="5" id="id_prayer" name="prayer"></textarea>
+          <label for="{{ form.prayer.id_for_label }}">{{ form.prayer.label }}</label>
+          {{ form.prayer.errors }}
+          {{ form.prayer }}
         </div>  
 
         <button class="round-button" role="button" type="submit">
