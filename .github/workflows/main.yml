@@ -25,4 +25,5 @@ jobs:
         with:
           push: true
           tags: unisagrado/virtual_chapel:latest
-          build-args: SECRET_KEY=${{secrets.SECRET_KEY}}
+          build-args: |
+            A_SECRET_KEY=${{ secrets.SECRET_KEY }}

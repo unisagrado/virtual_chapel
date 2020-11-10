@@ -4,7 +4,7 @@ ARG A_SECRET_KEY=super-secret-key-of-the-app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV PORT 8000
-ENV SECRET_KEY=${secret_key}
+ENV SECRET_KEY=${A_SECRET_KEY}}
 
 # install mysqlclient
 RUN apt-get update \ 
