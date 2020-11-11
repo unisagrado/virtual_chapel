@@ -8,7 +8,7 @@
     <div class="show-lg" id="clelia_merloni-pic">
         <img src="{% static 'img/clelia_merloni.png' %}" alt="Bem-aventurada Clélia Merloni" />
     </div>
-    <form action="." novalidate method="post" @submit="submitPrayerForm">
+    <form action="." novalidate method="post">
         {% csrf_token %}
         <div class="form-row input-text label-block">
             <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>

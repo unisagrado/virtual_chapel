@@ -58,6 +58,7 @@ header {
     justify-content: center;
     background-color: var(--color-header);
     padding: 2.4rem 0;
+    height: 88px;
 }
 
 header img {
@@ -96,6 +97,7 @@ header img {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;  
     font-size: 1.5rem;  
+    height: 48px;
 }
 
 .nav-button:hover{
@@ -167,10 +169,9 @@ header img {
     background-image: url('../img/candle-background.png');
     background-repeat: repeat-x;
     background-size: cover;
-    height: 450px;
+    height: calc(100vh - 160px);
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
     position: relative;
     width: 100%;
 }
@@ -300,6 +301,7 @@ header img {
 }
 
 .candle {
+    height: 410px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -323,11 +325,22 @@ header img {
     cursor: pointer;
 }
 
+.prayers-container {
+    height: 100%;
+}
+
+.prayers-container h1 {
+    text-align:center;
+    font-size: 4.8rem;
+}
+
 .carousel{
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2.4rem 1.6rem;
+    margin-top: 1.6rem;
 }
 
 .swiper-container {
@@ -350,6 +363,25 @@ header img {
     font-weight: bolder;
 }
 
+.swiper-slide-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    margin: auto;
+}
+
+.swiper-slide-empty p {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.swiper-slide-empty a {
+    font-size: 1.2rem;
+}
+
 .prayer {
     max-width: 320px;
     display: flex;
@@ -359,10 +391,20 @@ header img {
 
 .prayer p {
     background: #fff;
-    border-radius: 8px;
+    border-radius: 24px;
     width: 100%;
     font-size: 1rem;
-    padding: 1.6rem; 
+    padding: 0.8rem 1.6rem; 
+    height: 90px;
+    overflow-y: auto;
+    border: 1px solid black;
+}
+
+.prayer p strong {
+    display: block;
+    text-align: right;
+    margin-top: 0.2rem;
+    padding-right: 0.8rem;
 }
 
 
@@ -469,6 +511,7 @@ footer {
     }
 
     .balloon {
+        margin-top: 60px;
         max-width: 372px;
     }
 
@@ -488,17 +531,15 @@ footer {
         font-size: 0.8rem;
     }
 
-    .candle-container{
-        margin-bottom: 50px;
-    }
-
     .candle-container form{
-        margin: auto
+        margin: auto;
+        max-width: 400px;
     }
 
     .candle {
         grid-area: right;
-        margin-top: 4rem;
+        margin-top: auto;
+        margin-bottom: auto;
         margin-right: 4rem;     
     }
 
@@ -516,13 +557,34 @@ footer {
         bottom: 0;
     }
 
-    .candle-container {
-        height: 450px;
+    .prayers-container h1 {
+        font-size: 7.2rem;
     }
 
-    .candle-container form {
-        max-width: 400px;
-    }    
+    .prayer {
+        max-width: 480px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .prayer p {
+        background: #fff;
+        width: 272px;
+        height: 96px;
+        font-size: 1rem;
+        padding: 1.6rem; 
+        margin-left: 48px;
+        margin-top: -20px;
+    }
+    
+    .prayer img {
+        margin-right: auto;
+        margin-left: -60px;
+        margin-top: 0;
+        height: 254px;
+    }
+    
 }
 
 @media (min-width: 1000px) and (max-width: 1100px) {

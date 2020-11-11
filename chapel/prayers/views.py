@@ -29,5 +29,5 @@ def success(request):
 
 
 def listing(request):
-    context = {'prayers': Prayer.objects.all()}
+    context = {'prayers': Prayer.objects.lit_candles().order_by('-created_at')}
     return render(request, 'prayers/list.html', context)

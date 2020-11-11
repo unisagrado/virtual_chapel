@@ -1,4 +1,36 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block content %}
+<section class="welcome">
+  <div class="container">
+    <img src="{% static 'img/banner.svg' %}" />
+    <div class="welcome-message">
+      <p>Olá!</p>
+      <p>
+        Seja bem-vindo(a) a este local, onde você poderá deixar seus pedidos, 
+        em intercessão a Bem-Aventurada Clélia Merloni.
+      </p>
+      <p>“Abraço-te no Sagrado Coração de Jesus e nEle te fecho, com a chave da oração.”</p>
+      <em>Bem-Aventurada Clélia Merloni</em>
+    </div>
+
+    <div class="actions">
+      <a class="round-button" role="button" title="Faça sua prece" href="{% url 'prayers:new' %}" @click="blowOutCandle">
+        Faça sua prece
+      </a>
+      <a class="round-button" role="button" title="Veja as velas acesas" href="{% url 'prayers:list' %}">
+        Veja as velas acesas
+      </a>
+    </div>
+  </div>
+
+  <div class="show-lg" id="christ-pic">
+    <img src="{% static 'img/christ.png' %}" alt="Imagem de cristo de braços abertos" />
+  </div>
+</section>
+{% endblock content %}
+
+{% comment %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,33 +45,7 @@
   <main id="virtual-candle">
     {% include 'nav.html' %}
 
-    <section class="welcome">
-      <div class="container">
-        <img src="{% static 'img/banner.svg' %}" />
-        <div class="welcome-message">
-          <p>Olá!</p>
-          <p>
-            Seja bem-vindo(a) a este local, onde você poderá deixar seus pedidos, 
-            em intercessão a Bem-Aventurada Clélia Merloni.
-          </p>
-          <p>“Abraço-te no Sagrado Coração de Jesus e nEle te fecho, com a chave da oração.”</p>
-          <em>Bem-Aventurada Clélia Merloni</em>
-        </div>
-
-        <div class="actions">
-          <a class="round-button" role="button" title="Faça sua prece" href="{% url 'prayers:new' %}">
-            Faça sua prece
-          </a>
-          <a class="round-button" role="button" title="Veja as velas acesas" href="{% url 'prayers:list' %}">
-            Veja as velas acesas
-          </a>
-        </div>
-      </div>
-
-      <div class="show-lg" id="christ-pic">
-        <img src="{% static 'img/christ.png' %}" alt="Imagem de cristo de braços abertos" />
-      </div>
-    </section>
+   
   
   
     <footer>
@@ -48,4 +54,5 @@
   </main>
   <script src="{% static 'js/main.js' %}"></script>
 </body>
-</html>
+</html> {% endcomment %}
+

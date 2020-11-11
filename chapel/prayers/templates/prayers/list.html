@@ -15,8 +15,20 @@
                 {% for prayer in prayers %}
                     <swiper-slide>
                         <div class="prayer">
-                            <p>{{ prayer.description }}</p>
+                            <p>
+                                {{ prayer.description }}  
+                                <strong>- {{prayer.name}}</strong>
+                            </p>
                             <img src="{% static 'img/candle_on.png' %}" alt="Vela acesa" />
+                        </div>
+                    </swiper-slide>
+                {% empty %}
+                    <swiper-slide>
+                        <div class="swiper-slide-empty">
+                            <p>Não há nenhuma vela acesa</p>
+                            <a class="round-button" role="button" title="Faça sua prece" href="{% url 'prayers:new' %}">
+                               Acenda uma vela
+                            </a>
                         </div>
                     </swiper-slide>
                 {% endfor %}
@@ -26,17 +38,6 @@
                 <div class="swiper-button swiper-button-next" slot="button-next"></div>
             </swiper>        
         </div> 
-        
-        {% comment %} <carousel :settings="settings">
-            <div class="prayer">
-                <p>Pelas Famílias</p>
-                <img src="{% static 'img/candle_on.png' %}" alt="Vela acesa" />
-            </div>
-            <div class="prayer">
-                <p>Pela Pastoral</p>
-                <img src="{% static 'img/candle_on.png' %}" alt="Vela acesa" />
-            </div>
-        </carousel> {% endcomment %}
     </div>
 </section>
 {% endblock content %}
