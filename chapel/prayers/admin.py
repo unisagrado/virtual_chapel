@@ -4,7 +4,7 @@ from chapel.prayers.models import Prayer
 
 
 class PrayerModelAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'prayer')
+    list_display = ('name', 'email', 'description')
     date_hierarchy = 'created_at'
     search_fields = ('name', 'email', 'created_at')
     list_filter = ('created_at',)

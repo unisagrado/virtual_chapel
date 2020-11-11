@@ -43,7 +43,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-
 .background {
     background-color: var(--color-background);
     background-repeat: no-repeat;
@@ -104,29 +103,28 @@ header img {
     transition: background-color 0.2s;
 }
 
-.banner {
+.welcome .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
+    flex: 1;
+    padding: 0.4rem;
+    margin-top: 6rem;
 }
 
-.banner img {
+.welcome .container img {
+    margin-bottom: 3rem;
     max-width: 22rem;
-}
-
-.welcome-container {
-    position: relative;
 }
 
 .welcome-message {
     text-align: center;
+    padding: 0.4rem;
 }
 
 .welcome-message p{
     color: #fff;
-    padding: 0 0.4rem;
     font-weight: 300;
     font-size: 1.2rem;
 }
@@ -141,7 +139,7 @@ header img {
 
 .round-button {
     display: flex;
-    padding: 0.4rem 1.4rem;
+    padding: 0.6rem 1.4rem;
     background-color: var(--color-primary);
     border-radius: 16px;
     color: #fff;
@@ -150,12 +148,19 @@ header img {
     cursor: pointer;
     font-size: 1rem;
     text-transform: uppercase;
+    text-decoration: none;
+    margin: 1rem;
 }
 
-.welcome-container .round-button {
-    margin: 30px auto 40px;
+.welcome .container .actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    padding: 0.8rem;
+    margin: 0.8rem;
 }
-
 
 .candle-container {
     display: flex;
@@ -168,6 +173,13 @@ header img {
     margin-top: 80px;
     position: relative;
     width: 100%;
+}
+
+.candle-container h1 {
+    font-family: 'Photograph Signature', serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 8rem;
 }
 
 .candle-container form {
@@ -216,17 +228,10 @@ header img {
     resize: none;
 }
 
-footer {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #000;
-    background-color: #fff;
-    width: 100%;
-    text-align: center;
-    padding: 0.6rem;
-    position: fixed;
-    bottom: 0;
-    height: 24px;
+.errorlist {
+    color: #f44336;
+    list-style: none;
+    line-height: 24px;    
 }
 
 .success-container {
@@ -307,7 +312,7 @@ footer {
     border: none;
     border-radius: 50%;
     position: absolute;
-    top: 0;
+    top: 10px;
     left: calc(50% - 45px);
     border: 1px solid #fff;
     width: 70px;
@@ -318,22 +323,91 @@ footer {
     cursor: pointer;
 }
 
-.show-lg{
-    display: none;
-    position:relative;
-    height: 100%;
+.carousel{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-button {
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after{
+    color: var(--color-primary);
+    font-size: 1.2rem !important;
+    font-weight: bolder;
+}
+
+.prayer {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.prayer p {
+    background: #fff;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1.6rem; 
+}
+
+
+.prayer img {
+    margin: auto;
+    margin-top: -32px;
+    max-height: 256px;
+}
+
+.show-lg {
+    display: none;
+}
+
+footer {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem;
+    position: fixed;
+    bottom: 0;
+    height: 24px;
+}
 
 
 @media (min-width: 700px) {
     .background {
-        width: 100%;
-        background-color: var(--color-background);
-        background-repeat: no-repeat;
         background-image: url('../img/background.png');
-        background-size: cover;
-        min-height: 100vh;
+    }
+
+    .nav-menu ul{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .nav-menu ul li{
+        width: 248px;
+    }
+
+
+    .nav-menu ul li + li {
+        margin-top: 0;
+        margin-left: 0.2rem;
     }
 
     .round-button {
@@ -341,35 +415,47 @@ footer {
         font-size: 1.4rem;
     }
 
-
-    .welcome-container #initial-message {
-        margin: auto;
-        max-width: 640px;
-        margin-top: 40px;
-        margin-bottom: 0;
+    .show-lg {
+        display: flex;
+        position: relative;
     }
 
-    #initial-message .round-button{
-        margin-top: 5rem;
+    .show-lg#christ-pic{
+        bottom: 0;
+        right: 0;
+        position: absolute;
     }
 
+    .welcome .container {
+        max-width: 640px;   
+        margin-left: auto;   
+        margin-right: auto;  
+    }
+
+    .welcome .container img{
+        max-width: 32rem;
+    }
+
+    .welcome-message {
+        padding: 0.6rem;
+    }
+    
     .welcome-message p{
         font-size: 1.8rem;
     }
     
     .welcome-message em {
-        font-size: 1.4rem; 
+        font-size: 1.4rem;  
     }
 
-    .success-container{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-left: 30px;
+    .success-container {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-template: "left center right";
     }
 
     .success-message {
+        grid-area: center;
         padding-top: 5rem;
         height: 100%;
         display: flex;
@@ -402,21 +488,6 @@ footer {
         font-size: 0.8rem;
     }
 
-    .nav-menu ul{
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .nav-menu ul li{
-        width: 248px;
-    }
-
-
-    .nav-menu ul li + li {
-        margin-top: 0;
-        margin-left: 0.2rem;
-    }
-
     .candle-container{
         margin-bottom: 50px;
     }
@@ -426,61 +497,64 @@ footer {
     }
 
     .candle {
+        grid-area: right;
         margin-top: 4rem;
         margin-right: 4rem;     
     }
 
-    .show-lg{
-        display: flex;  
-        align-items: flex-end;
-    }
-
-    #clelia_merloni-pic {
-        align-items: flex-end;
+    .show-lg#clelia_merloni-pic{
+        grid-area: left;
         position: absolute;
         left: 0;
+        bottom: 0;
     }
 
     #clelia_merloni-pic img {
-        display: block;
-        max-width: 340px;
+        max-width: 280px;
         width: auto;
         height: auto;
         bottom: 0;
     }
 
-    #christ-pic {
-        position: absolute;
-        right: 0;
-        bottom: -40px;
+    .candle-container {
+        height: 450px;
     }
 
-    #christ-pic img {
-        height: 100%;
-        max-height: 360px;
+    .candle-container form {
+        max-width: 400px;
+    }    
+}
+
+@media (min-width: 1000px) and (max-width: 1100px) {
+    .show-lg#christ-pic img{
+        max-width: 400px;
+    }
+
+    .show-lg#clelia_merloni-pic img{
+        max-width: 240px;
     }
 }
 
-@media (min-width:700px) and (max-width: 1080px){
-    #christ-pic img, #clelia_merloni-pic img  {
-        height: 100%;
-        max-height: 300px;
+@media (min-width: 900px) and (max-width: 1000px) {
+    .show-lg#christ-pic img{
+        max-width: 340px;
+    }
+
+    .show-lg#clelia_merloni-pic img{
+        max-width: 220px;
     }
 }
 
-@media (min-width:700px) and (max-width: 930px){
-    #christ-pic img, #clelia_merloni-pic img {
-        height: 100%;
-        max-height: 260px;
+@media (min-width: 700px) and (max-width: 900px) {
+    .show-lg#christ-pic img{
+        max-width: 300px;
+    }
+
+    .show-lg#clelia_merloni-pic img{
+        max-width: 200px;
     }
 }
 
-@media (min-width:700px) and (max-width: 850px){
-    #christ-pic img, #clelia_merloni-pic img {
-        height: 100%;
-        max-height: 240px;
-    }
-}
 
 .hide {
     display: none;

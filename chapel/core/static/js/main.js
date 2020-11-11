@@ -1,27 +1,38 @@
-/*
-1 - após envio do form:
-    - esconde form
-    - mostra vela
-    - mostra sucesso
-    - mostra botão acende vela
 
-2 - após acende vela
-    - mostra imagem fogo
-    - mostra mensagem vela 7 dias
+Vue.use(VueAwesomeSwiper)
 
-3 - Clique faça sua prece (recarrega página)
-    - esconde mensagem de sucesso
-    - esconde vela
-    - escode imagem fogo
-    - esconde mensagem vela 7 dias
-    - mostra form
-*/
-
-const virtualCandle = new Vue({
+new Vue({
     el: '#virtual-candle',
+    delimiters: ['[[', ']]'],
     data: {
         litCandle: false,
         success: false,
+        helloVue: 'Hello from Vue',
+        swiperOptions: {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: true
+            },
+            spaceBetween: 30,
+            breakpoints: {
+                1100: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 3,
+                },
+                900: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                },
+                700: {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                }
+            }
+        }
     },
     methods: {
         hello() {

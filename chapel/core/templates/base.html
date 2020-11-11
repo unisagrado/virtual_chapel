@@ -5,66 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Capela Virtual{% endblock title %}</title>
+  
   <link rel="stylesheet" href="{% static 'css/main.css' %}"></link>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700;800&family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"></link>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  
+  <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}"></link>
+
 </head>
 <body class="background">
-  <div class="header">
-    <header>
-      <img src="{% static 'img/logo.png'%}" alt="Logo Unisagrado" />
-    </header>
-    <nav class="nav-menu" role="navigation">
-      <ul>
-        <li><a class="nav-button" href="#sobre">Sobre</a></li>
-        <li><a class="nav-button" href="#prece">Faça sua Prece</a></li>
-      </ul>
-    </nav>
-  </div>
-  
-
   <main id="virtual-candle">
-    <section class="welcome-container">
-      <div id="initial-message">
-        <div class="banner">
-          <img src="{% static 'img/banner.svg' %}" />
-        </div>
+    {% include 'nav.html' %}
 
-        <div class="welcome-message">
-          <p>Olá!</p>
-          <p>
-            Seja bem-vindo(a) a este local, onde você poderá deixar seus pedidos, 
-            em intercessão a bem Aventurada Clélia Merloni.
-          </p>
-          <p>“Abraço-te no Sagrado Coração de Jesus e nEle te fecho, com a chave da oração.”</p>
-          <em>Bem-Aventurada Clélia Merloni</em>
-        </div>
-
-        <button class="round-button" role="button" title="Faça sua prece" @click="hello()">
-          Faça sua prece
-        </button>
-      </div>
-      
-      <div class="show-lg" id="christ-pic">
-        <img id="christ-pic" src="{% static 'img/christ.png' %}" alt="Imagem de cristo de braços abertos" />
-      </div>
-    </section>
-
-
-    <section class="candle-container">
-      <div class="show-lg" id="clelia_merloni-pic">
-        <img src="{% static 'img/clelia_merloni.png' %}" alt="Bem-aventurada Clélia Merloni" />
-      </div>
-
-      {% block content %}
-      {% endblock content%}      
-    </section>
+    {% block content %}
+    {% endblock content%} 
   </main>
   
   <footer>
       &copy; 2020 | UNISAGRADO. Todos os direitos reservados.
   </footer>
-  
+
+  <script src="{% static 'js/swiper.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="{% static 'js/vue-awesome-swiper.min.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

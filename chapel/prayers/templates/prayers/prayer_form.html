@@ -1,28 +1,34 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Faça sua prece{% endblock title %}
 
 {% block content %}
- <form :class="!success? 'show':'hide'" action="." novalidate method="post" @submit="submitPrayerForm">
-    {% csrf_token %}
-    <div class="form-row input-text label-block">
-        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-        {{ form.name.errors }}
-        {{ form.name }}
+<section class="candle-container">
+    <div class="show-lg" id="clelia_merloni-pic">
+        <img src="{% static 'img/clelia_merloni.png' %}" alt="Bem-aventurada Clélia Merloni" />
     </div>
-    <div class="form-row input-text label-block">
-        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
-        {{ form.email.errors }}
-        {{ form.email }}
-    </div>
-    <div class="form-row input-text label-block">
-        <label for="{{ form.prayer.id_for_label }}">{{ form.prayer.label }}</label>
-        {{ form.prayer.errors }}
-        {{ form.prayer }}
-    </div>  
+    <form action="." novalidate method="post" @submit="submitPrayerForm">
+        {% csrf_token %}
+        <div class="form-row input-text label-block">
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            {{ form.name.errors }}
+            {{ form.name }}
+        </div>
+        <div class="form-row input-text label-block">
+            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            {{ form.email.errors }}
+            {{ form.email }}
+        </div>
+        <div class="form-row input-text label-block">
+            <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+            {{ form.description.errors }}
+            {{ form.description }}
+        </div>  
 
-    <button class="round-button" role="button" type="submit">
-        Enviar Prece
-    </button>
-</form>
+        <button class="round-button" role="button" type="submit">
+            Enviar Prece
+        </button>
+    </form>
+</section>
 {% endblock content %}

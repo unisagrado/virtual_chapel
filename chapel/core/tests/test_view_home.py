@@ -19,8 +19,8 @@ class HomeGet(TestCase):
         contents = (
             ('<em>Bem-Aventurada Clélia Merloni</em>', 1),
             ('title="Faça sua prece"', 1),
-            ('<li><a class="nav-button" href="#sobre">Sobre</a></li>', 1),
-            ('<li><a class="nav-button" href="#prece">Faça sua Prece</a></li>', 1),
+            ('<li><a class="nav-button" href="#sobre">Sobre a pastoral</a></li>', 1),
+            ('title="Veja as velas acesas"', 1),
         )
 
         for expected, count in contents:

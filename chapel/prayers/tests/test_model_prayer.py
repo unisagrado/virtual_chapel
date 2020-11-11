@@ -3,12 +3,12 @@ from django.test import TestCase
 from chapel.prayers.models import Prayer
 
 
-class PrayersModelTest(TestCase):
+class PrayerModelTest(TestCase):
     def setUp(self):
         self.obj = Prayer.objects.create(
             name='Vinicius Boscoa',
             email='valid@email.com',
-            prayer='Pelas famílias'
+            description='Pelas famílias'
         )
 
     def test_create(self):
@@ -20,3 +20,8 @@ class PrayersModelTest(TestCase):
 
     def test_str(self):
         self.assertEqual('Vinicius Boscoa', str(self.obj))
+
+
+class PeriodManagerTest(TestCase):
+    def setUp(self):
+        Prayer.objects.create(description='')

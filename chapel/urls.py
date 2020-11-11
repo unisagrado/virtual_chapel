@@ -19,6 +19,6 @@ import chapel.core.views
 
 urlpatterns = [
     path('', chapel.core.views.home),
-    path('faca-sua-prece/', include('chapel.prayers.urls')),
+    path('preces/', include('chapel.prayers.urls')),
     path('admin/', admin.site.urls),
 ]

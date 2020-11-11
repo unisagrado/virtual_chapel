@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Velas acesas{% endblock title %}
+
+{% block content %}
+<section class="candle-container">
+    <div class="prayers-container">
+        <h1>Todas as preces!</h1>       
+        <div class="carousel">
+            <swiper 
+                ref="swiperComponent"
+                :options="swiperOptions"            
+            >
+                {% for prayer in prayers %}
+                    <swiper-slide>
+                        <div class="prayer">
+                            <p>{{ prayer.description }}</p>
+                            <img src="{% static 'img/candle_on.png' %}" alt="Vela acesa" />
+                        </div>
+                    </swiper-slide>
+                {% endfor %}
+                
+                <div class="swiper-scrollbar" slot="scrollbar"></div>
+                <div class="swiper-button swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button swiper-button-next" slot="button-next"></div>
+            </swiper>        
+        </div> 
+        
+        {% comment %} <carousel :settings="settings">
+            <div class="prayer">
+                <p>Pelas Famílias</p>
+                <img src="{% static 'img/candle_on.png' %}" alt="Vela acesa" />
+            </div>
+            <div class="prayer">
+                <p>Pela Pastoral</p>
+                <img src="{% static 'img/candle_on.png' %}" alt="Vela acesa" />
+            </div>
+        </carousel> {% endcomment %}
+    </div>
+</section>
+{% endblock content %}

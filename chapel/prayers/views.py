@@ -6,16 +6,28 @@ from chapel.prayers.models import Prayer
 
 def new(request):
     if request.method == 'POST':
-        form = PrayerForm(request.POST)
-        if not form.is_valid():
-            return render(request, 'prayers/prayer_form.html', {'form': form})
+        return create(request)
 
-        Prayer.objects.create(**form.cleaned_data)
-        return HttpResponseRedirect(r('prayers:success'))
+    return empty_form(request)
 
-    form = PrayerForm()
+
+def empty_form(request):
     return render(request, 'prayers/prayer_form.html', {'form': PrayerForm()})
+
+
+def create(request):
+    form = PrayerForm(request.POST)
+    if not form.is_valid():
+        return render(request, 'prayers/prayer_form.html', {'form': form})
+
+    Prayer.objects.create(**form.cleaned_data)
+    return HttpResponseRedirect(r('prayers:success'))
 
 
 def success(request):
     return render(request, 'prayers/success.html')
+
+
+def listing(request):
+    context = {'prayers': Prayer.objects.all()}
+    return render(request, 'prayers/list.html', context)

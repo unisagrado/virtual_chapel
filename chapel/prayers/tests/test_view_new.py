@@ -44,7 +44,7 @@ class PrayersNewGet(TestCase):
 class PrayersNewPostValid(TestCase):
     def setUp(self):
         data = dict(name='Vinicius Boscoa', email='valid@email.com',
-                    prayer='Pelas famílias')
+                    description='Pelas famílias')
         self.resp = self.client.post(r('prayers:new'), data)
 
     def test_post(self):
