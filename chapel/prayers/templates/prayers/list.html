@@ -23,14 +23,14 @@
                         </div>
                     </swiper-slide>
                 {% empty %}
-                    <swiper-slide>
-                        <div class="swiper-slide-empty">
-                            <p>Não há nenhuma vela acesa</p>
-                            <a class="round-button" role="button" title="Faça sua prece" href="{% url 'prayers:new' %}" @click="blowOutCandle">
-                               Acenda uma vela
-                            </a>
-                        </div>
-                    </swiper-slide>
+                    
+                    <div class="swiper-slide-empty">
+                        <p>Não há nenhuma vela acesa</p>
+                        <a class="round-button" role="button" title="Faça sua prece" href="{% url 'prayers:new' %}" @click="blowOutCandle">
+                            Acenda uma vela
+                        </a>
+                    </div>
+                    
                 {% endfor %}
                 
                 <div class="swiper-scrollbar" slot="scrollbar"></div>
