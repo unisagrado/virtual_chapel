@@ -6,11 +6,6 @@ ENV PYTHONUNBUFFERED 1
 ENV PORT 8000
 ENV SECRET_KEY=${A_SECRET_KEY}}
 
-# set timezone 
-ENV TIME_ZONE=UTC
-ENV TZ=$TIME_ZONE
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
 # install mysqlclient
 RUN apt-get update \ 
     && apt-get install -y python3-dev default-libmysqlclient-dev build-essential
