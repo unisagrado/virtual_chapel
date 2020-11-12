@@ -1,5 +1,5 @@
 const CAROUSEL_CONFIG = {
-    loop: true,
+    loop: false,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
@@ -14,6 +14,7 @@ const CAROUSEL_CONFIG = {
     },
     grabCursor: true,
     spaceBetween: 30,
+    loopFillGroupWithBlank: true,
     breakpoints: {
         1100: {
             slidesPerView: 3,

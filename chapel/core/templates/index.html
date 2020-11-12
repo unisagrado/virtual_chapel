@@ -16,7 +16,7 @@
 
     <div class="actions">
       <a class="round-button" role="button" title="Faça sua prece" href="{% url 'prayers:new' %}" @click="blowOutCandle">
-        Faça sua prece
+        Acenda uma vela
       </a>
       <a class="round-button" role="button" title="Veja as velas acesas" href="{% url 'prayers:list' %}">
         Veja as velas acesas
@@ -29,30 +29,4 @@
   </div>
 </section>
 {% endblock content %}
-
-{% comment %} {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capela Virtual</title>
-  <link rel="stylesheet" href="{% static 'css/main.css' %}"></link>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700;800&family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"></link>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-</head>
-<body class="background">
-  <main id="virtual-candle">
-    {% include 'nav.html' %}
-
-   
-  
-  
-    <footer>
-      &copy; 2020 | UNISAGRADO. Todos os direitos reservados.
-    </footer>
-  </main>
-  <script src="{% static 'js/main.js' %}"></script>
-</body>
-</html> {% endcomment %}
 

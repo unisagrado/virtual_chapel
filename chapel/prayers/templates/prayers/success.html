@@ -17,6 +17,9 @@
             </div>
             </div>
             <img src="{% static 'img/msg_clelia_merloni.png' %}" alt="Abençoo-vos com cem corações. Bem-aventurada Clélia Merloni" />
+            <a class="round-button" role="button" title="Veja as velas acesas" href="{% url 'prayers:list' %}">
+                Veja as velas acesas
+            </a>
         </div>
         <div class="candle" id="candle">
             <button class="candle-light" type="button" @click="lightCandle">
@@ -24,6 +27,7 @@
             </button>
             <img src="{% static 'img/candle.png' %}" />
         </div>
+        
     </div>
 </section>
 {% endblock content %}
