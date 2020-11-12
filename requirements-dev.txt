@@ -2,4 +2,5 @@
 autopep8==1.5.4
 jupyter
 pycodestyle==2.6.0
+sqlformatter==1.4
 toml==0.10.1

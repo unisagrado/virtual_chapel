@@ -322,15 +322,21 @@ header img {
     border: none;
     border-radius: 50%;
     position: absolute;
-    top: 10px;
-    left: calc(50% - 45px);
+    top: 0;
+    left: calc(50% - 55px);
     border: 1px solid #fff;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.candle-light p {
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
 .prayers-container {

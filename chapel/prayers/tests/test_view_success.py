@@ -15,7 +15,8 @@ class PrayerSuccessGet(TestCase):
     def test_html(self):
         contents = [
             'A Bem-Aventurada Clélia Merloni interceda por você e por suas intenções.',
-            '<div class="success-message"'
+            '<div class="success-message"',
+            'Clique aqui para acender sua vela'
         ]
 
         for expected in contents:

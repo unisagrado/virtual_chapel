@@ -23,6 +23,9 @@
         </div>
         <div class="candle" id="candle">
             <button class="candle-light" type="button" @click="lightCandle">
+                <p :class="!litCandle? 'show': 'hide'">
+                    Clique aqui para acender sua vela
+                </p>
                 <img :class="litCandle? 'show': 'hide'" id="id_candle-light" src="{% static 'img/candle-light.png'%}" alt="Chama" />
             </button>
             <img src="{% static 'img/candle.png' %}" />
