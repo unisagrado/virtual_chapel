@@ -5,7 +5,7 @@ from chapel.prayers.managers import LitManager
 class Prayer(models.Model):
     name = models.CharField('nome', max_length=100)
     email = models.EmailField('email')
-    description = models.TextField('intenção')
+    description = models.TextField('intenção', max_length=220)
     created_at = models.DateTimeField('acesa em', auto_now_add=True)
 
     objects = LitManager()

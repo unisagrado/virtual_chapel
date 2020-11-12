@@ -20,7 +20,7 @@ def create(request):
     if not form.is_valid():
         return render(request, 'prayers/prayer_form.html', {'form': form})
 
-    Prayer.objects.create(**form.cleaned_data)
+    form.save()
     return HttpResponseRedirect(r('prayers:success'))
 
 
