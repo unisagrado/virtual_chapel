@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = config('TZ', default='UTC')
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
