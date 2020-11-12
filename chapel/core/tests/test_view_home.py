@@ -19,7 +19,7 @@ class HomeGet(TestCase):
         contents = (
             ('<em>Bem-Aventurada Clélia Merloni</em>', 1),
             ('title="Faça sua prece"', 1),
-            ('<li><a class="nav-button" href="#sobre">Sobre a pastoral</a></li>', 1),
+            ('<li><a class="nav-button" href="https://unisagrado.edu.br/no-unisagrado/pastoral">Sobre a pastoral</a></li>', 1),
             ('title="Veja as velas acesas"', 1),
         )
 
